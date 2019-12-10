@@ -1,4 +1,4 @@
-package pizza.spring.dao;
+package meetingroom.spring.dao;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
-import pizza.spring.modele.Commande;
-import pizza.spring.modele.Pizza;
+import meetingroom.spring.modele.Commande;
+import meetingroom.spring.modele.Pizza;
 
 @Repository
 public class PizzaDao {

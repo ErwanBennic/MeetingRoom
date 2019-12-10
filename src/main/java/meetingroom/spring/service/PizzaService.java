@@ -1,14 +1,14 @@
-package pizza.spring.service;
+package meetingroom.spring.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import meetingroom.spring.dao.PizzaDao;
+import meetingroom.spring.modele.TraitementDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pizza.spring.dao.PizzaDao;
-import pizza.spring.modele.Commande;
-import pizza.spring.modele.Pizza;
-import pizza.spring.modele.TraitementDTO;
+import meetingroom.spring.modele.Commande;
+import meetingroom.spring.modele.Pizza;
 
 import javax.transaction.Transactional;
 

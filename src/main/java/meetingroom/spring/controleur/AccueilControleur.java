@@ -1,19 +1,17 @@
-package pizza.spring.controleur;
+package meetingroom.spring.controleur;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import pizza.spring.modele.Commande;
-import pizza.spring.modele.Pizza;
-import pizza.spring.modele.TraitementDTO;
-import pizza.spring.service.PizzaService;
+import meetingroom.spring.modele.Commande;
+import meetingroom.spring.modele.Pizza;
+import meetingroom.spring.modele.TraitementDTO;
+import meetingroom.spring.service.PizzaService;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Controller

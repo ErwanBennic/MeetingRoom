@@ -1,4 +1,4 @@
-package pizza.spring.modele;
+package meetingroom.spring.modele;
 
 import javax.persistence.Entity;
 import java.util.ArrayList;
