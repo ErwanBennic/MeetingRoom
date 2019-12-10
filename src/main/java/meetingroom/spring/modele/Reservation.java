@@ -1,9 +1,7 @@
 package meetingroom.spring.modele;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Reservation {
 
@@ -14,6 +12,13 @@ public class Reservation {
     private String description;
     private Date date_debut;
     private Date date_fin;
+
+    @ManyToOne
+    private long user_id;
+
+    @ManyToOne
+    private long salle_id;
+
 
     public Long getId() {
         return id;

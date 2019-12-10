@@ -20,7 +20,7 @@ public class AccueilController {
 	@Autowired
 	private PizzaService pizzaService;
 
-	@GetMapping({"/accueil"})
+	@GetMapping("/accueil")
 	public String accueil(Model model) {
 		List<Commande> result = pizzaService.getListeCommande();
 		model.addAttribute("result", result);
@@ -45,13 +45,6 @@ public class AccueilController {
         return "index";
     }
 
-	@GetMapping("/form")
-	public String form(Commande commande, Model model){
-
-        List<Pizza> pizzas = pizzaService.getListePizza();
-        model.addAttribute("pizzas", pizzas);
-	    return "form";
-	}
 
     @GetMapping("/preparation")
     public String preparation(Model model){
