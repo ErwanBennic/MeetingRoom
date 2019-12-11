@@ -22,10 +22,10 @@ public class AdminDao {
     }
 
     @Transactional
-    public List<Reservation> getListReservation(long id) {
+    public List<Reservation> getListReservation(String id) {
         List<Reservation> reservations;
 
-        reservations = em.createQuery("select r from Reservation r where r.salle.id = :id", Reservation.class).setParameter("id", id)
+        reservations = em.createQuery("select r from Reservation r where r.salle.lib = :id", Reservation.class).setParameter("id", id)
                 .getResultList();
 
         if (reservations.size() < 1){

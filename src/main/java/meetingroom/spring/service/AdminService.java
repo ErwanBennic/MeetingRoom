@@ -19,7 +19,7 @@ public class AdminService {
     }
 
     @Transactional
-    public List<Reservation> getListReservation(long id) {
+    public List<Reservation> getListReservation(String id) {
         return adminDao.getListReservation(id);
     }
 }

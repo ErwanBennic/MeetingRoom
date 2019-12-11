@@ -20,7 +20,21 @@ public class Reservation {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Salle salle;
 
+    public User getUser() {
+        return user;
+    }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Salle getSalle() {
+        return salle;
+    }
+
+    public void setSalle(Salle salle) {
+        this.salle = salle;
+    }
 
     public Long getId() {
         return id;

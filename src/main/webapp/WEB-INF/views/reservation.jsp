@@ -9,20 +9,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Réservation</title>
 </head>
 <body>
 <div class="container">
-    <p>${reservations}</p>
     <div class="row">
-        <h1>Réservation pour la salle [X] :</h1>
+        <h1>Réservation pour la salle [${salle}] :</h1>
     </div>
     <div class="row pt-4 pb-4">
         <table class="table table-striped">
             <thead>
             <tr>
-                <th scope="col">Salle</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Description</th>
                 <th scope="col">Date de début</th>
                 <th scope="col">Date de fin</th>
             </tr>
@@ -30,7 +31,9 @@
             <tbody>
             <c:forEach items="${reservations}" var="resa">
                 <tr>
-                    <td></td>
+                    <td>${resa.id}</td>
+                    <td>${resa.nom}</td>
+                    <td>${resa.description}</td>
                     <td>${resa.date_debut}</td>
                     <td>${resa.date_fin}</td>
                 </tr>

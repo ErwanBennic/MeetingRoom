@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Liste des salles</title>
 </head>
 <body>
@@ -34,7 +34,7 @@
                     <td></td>
                     <td>
                         <form action="reservation" method="post">
-                            <input type="hidden" name="id" value="${salle.id}">
+                            <input type="hidden" name="id" value="${salle.lib}">
                             <button type="submit">Voir</button>
                         </form>
                     </td>

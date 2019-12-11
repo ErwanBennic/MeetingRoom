@@ -27,9 +27,10 @@ public class AdminController {
     }
 
     @PostMapping("/reservation")
-    public String reservation(Model model, @RequestParam("id") long id) {
+    public String reservation(Model model, @RequestParam("id") String id) {
         List<Reservation> reservations = adminService.getListReservation(id);
         model.addAttribute("reservations", reservations);
+        model.addAttribute("salle", id);
         return "reservation";
     }
 
