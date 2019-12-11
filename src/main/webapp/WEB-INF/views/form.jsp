@@ -25,11 +25,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Date de début</label>
-                            <input type="date" class="form-control" id="inputEmail4" placeholder="Date">
+                            <input type="datetime-local" class="form-control" id="inputEmail4" placeholder="Date">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Date de fin</label>
-                            <input type="date" class="form-control" id="inputEmail5" placeholder="Date">
+                            <input type="datetime-local" class="form-control" id="inputEmail5" placeholder="Date">
                         </div>
                     </div>
                     <div class="form-group">
