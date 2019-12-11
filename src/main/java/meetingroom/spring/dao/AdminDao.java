@@ -1,5 +1,6 @@
 package meetingroom.spring.dao;
 
+import meetingroom.spring.modele.Reservation;
 import meetingroom.spring.modele.Salle;
 import meetingroom.spring.modele.User;
 import org.springframework.stereotype.Repository;
@@ -18,5 +19,19 @@ public class AdminDao {
     public List<Salle> getListSalle() {
         return em.createQuery("select s from Salle s", Salle.class)
                 .getResultList();
+    }
+
+    @Transactional
+    public List<Reservation> getListReservation(String id) {
+        List<Reservation> reservations;
+
+        reservations = em.createQuery("select r from Reservation r where r.salle.lib = :id", Reservation.class).setParameter("id", id)
+                .getResultList();
+
+        if (reservations.size() < 1){
+            return null;
+        } else {
+            return reservations;
+        }
     }
 }

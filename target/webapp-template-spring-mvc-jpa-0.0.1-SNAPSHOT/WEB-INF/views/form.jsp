@@ -10,7 +10,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" href="${pageContext.request.contextPath}/assets/images/meeting.png"/>
     <title>Formulaire</title>
 </head>
 <body>
@@ -20,37 +21,35 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-6">
-                <form>
+                <form action="ajoutresa" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">Date</label>
+                            <label for="inputEmail4">Date de début</label>
                             <input type="date" class="form-control" id="inputEmail4" placeholder="Date">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputPassword4">Nom</label>
-                            <input type="text" class="form-control" id="inputPassword4" placeholder="Nom">
+                            <label for="inputEmail4">Date de fin</label>
+                            <input type="date" class="form-control" id="inputEmail5" placeholder="Date">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress">Durée</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        <label for="inputPassword4">Prénom, Nom</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">Email</label>
                         <input type="text" class="form-control" id="inputAddress2" placeholder="johndoe@email.com">
+                        <div class="row justify-content-center pt-4">
+                            <button type="button" class="btn btn-primary btn-sm">Ajouter un email</button>
+                        </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputCity">Description</label>
-                            <input type="text" class="form-control" id="inputCity">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputState">State</label>
-                            <select id="inputState" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email des participants</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email ...">
                     </div>
                     <div class="form-group">
                         <div class="form-check">
@@ -60,7 +59,9 @@
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
                 </form>
             </div>
         </div>

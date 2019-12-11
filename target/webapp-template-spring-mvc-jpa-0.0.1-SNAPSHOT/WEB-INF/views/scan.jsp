@@ -9,12 +9,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="icon" href="${pageContext.request.contextPath}/assets/images/meeting.png"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Scan</title>
 </head>
 <body>
     <div class="container">
-        <div class="row pt-4 pb-4">
+        <div class="row pt-4 pb-4 justify-content-center">
             <h1>Scanner ou chercher un code</h1>
         </div>
         <div class="row justify-content-center">
