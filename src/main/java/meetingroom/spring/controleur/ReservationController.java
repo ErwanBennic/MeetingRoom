@@ -20,4 +20,9 @@ public class ReservationController {
     public String form() {
         return "form";
     }
+
+    @GetMapping({"/reservation"})
+    public String reservation() {
+        return "reservation";
+    }
 }
