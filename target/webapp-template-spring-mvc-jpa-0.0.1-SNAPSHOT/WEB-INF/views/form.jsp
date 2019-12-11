@@ -20,7 +20,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-6">
-                <form>
+                <form action="ajoutresa" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="date_debut">Date</label>
