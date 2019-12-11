@@ -13,7 +13,6 @@
 </head>
 <body>
 <div class="container">
-    <%-- Tableau à remplacer par un foreach --%>
     <div class="row pt-4 pb-4">
         <h1>Liste des salles</h1>
     </div>
@@ -27,38 +26,17 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">211</th>
-                <td><a href="lienspdf">lien</a></td>
-                <td><a href="${pageContext.request.contextPath}/reservation">Voir les réservations</a></td>
-            </tr>
-            <tr>
-                <th scope="row">106</th>
-                <td><a href="lienspdf">lien</a></td>
-                <td><a href="lienspdf">Voir les réservations</a></td>
-            </tr>
-            <tr>
-                <th scope="row">207</th>
-                <td><a href="lienspdf">lien</a></td>
-                <td><a href="lienspdf">Voir les réservations</a></td>
-            </tr>
+            <c:forEach items="${salles}" var="salle">
+                <tr>
+                    <td>${salle.lib}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>
 </div>
-<table class="table table-bordered">
-    <tr>
-        <th>id</th>
-        <th>Nom</th>
-        <th>Télécharger PDF</th>
-    </tr>
-    <c:forEach items="${salles}" var="salle">
-        <tr>
-            <td>${salle.id}</td>
-            <td>${salle.lib}</td>
-            <td></td>
-        </tr>
-    </c:forEach>
 
 </body>
 <script src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
