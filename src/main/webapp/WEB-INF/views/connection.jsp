@@ -10,25 +10,31 @@
 <html>
 <head>
     <title>Connection</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/assets/images/meeting.png"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/signin.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body class="text-center">
     <div class="container">
+        <div class="row justify-content-center">
+            <img class="mb-4" src="${pageContext.request.contextPath}/assets/images/meeting.png" alt="" width="72" height="72">
+        </div>
+        <div class="row justify-content-center">
+            <h1><b>Meeting-Room</b></h1>
+        </div>
         <form class="form-signin">
-            <img class="mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
+            <label for="inputEmail" class="sr-only">Adresse Email</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" required autofocus>
+            <label for="inputPassword" class="sr-only">Mot de passe</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
             <div class="checkbox mb-3">
                 <label>
-                    <input type="checkbox" value="remember-me"> Remember me
+                    <input type="checkbox" value="remember-me"> Se souvenir de moi
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
         </form>
     </div>
 </body>

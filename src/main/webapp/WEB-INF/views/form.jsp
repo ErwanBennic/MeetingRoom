@@ -11,6 +11,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" href="${pageContext.request.contextPath}/assets/images/meeting.png"/>
     <title>Formulaire</title>
 </head>
 <body>
@@ -23,26 +24,31 @@
                 <form action="ajoutresa" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="date_debut">Date</label>
-                            <input type="date" class="form-control" id="date_debut" name="date_debut" placeholder="Date de début ...">
+                            <label for="inputEmail4">Date de début</label>
+                            <input type="date" class="form-control" id="inputEmail4" placeholder="Date">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="nom">Nom</label>
-                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom ...">
+                            <label for="inputEmail4">Date de fin</label>
+                            <input type="date" class="form-control" id="inputEmail5" placeholder="Date">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="duree">Durée</label>
-                        <input type="text" class="form-control" id="duree" name="duree" placeholder="Duree ...">
+                        <label for="inputPassword4">Prénom, Nom</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="John Doe">
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control" id="description" name="description">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Email</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="johndoe@email.com">
+                        <div class="row justify-content-center pt-4">
+                            <button type="button" class="btn btn-primary btn-sm">Ajouter un email</button>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Participants</label>
+                        <label for="email">Email des participants</label>
                         <input type="text" class="form-control" id="email" name="email" placeholder="Email ...">
                     </div>
                     <div class="form-group">
@@ -53,7 +59,9 @@
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
                 </form>
             </div>
         </div>
