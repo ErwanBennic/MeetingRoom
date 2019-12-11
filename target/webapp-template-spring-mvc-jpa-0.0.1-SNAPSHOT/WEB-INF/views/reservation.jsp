@@ -1,49 +1,41 @@
 <%--
   Created by IntelliJ IDEA.
   User: Erwan
-  Date: 10/12/2019
-  Time: 16:24
+  Date: 11/12/2019
+  Time: 15:16
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Liste des salles</title>
+    <title>Réservation</title>
 </head>
 <body>
 <div class="container">
-    <%-- Tableau à remplacer par un foreach --%>
-    <div class="row pt-4 pb-4">
-        <h1>Liste des salles</h1>
-    </div>
     <div class="row">
+        <h1>Réservation pour la salle [X] :</h1>
+    </div>
+    <div class="row pt-4 pb-4">
         <table class="table table-striped">
             <thead>
             <tr>
                 <th scope="col">Salle</th>
-                <th scope="col">Impression PDF</th>
-                <th scope="col">Réservations</th>
+                <th scope="col">Date de début</th>
+                <th scope="col">Date de fin</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <th scope="row">211</th>
-                <td><a href="lienspdf">lien</a></td>
-                <td><a href="${pageContext.request.contextPath}/reservation">Voir les réservations</a></td>
-            </tr>
-            <tr>
-                <th scope="row">106</th>
-                <td><a href="lienspdf">lien</a></td>
-                <td><a href="lienspdf">Voir les réservations</a></td>
-            </tr>
-            <tr>
-                <th scope="row">207</th>
-                <td><a href="lienspdf">lien</a></td>
-                <td><a href="lienspdf">Voir les réservations</a></td>
+                <td>28/11/2019 | 14h00</td>
+                <td>28/11/2019 | 16h00</td>
             </tr>
             </tbody>
         </table>
+    </div>
+    <div class="row">
+        <a href="${pageContext.request.contextPath}/roomlist">Retour</a>
     </div>
 </div>
 

@@ -30,7 +30,7 @@
             <tr>
                 <th scope="row">211</th>
                 <td><a href="lienspdf">lien</a></td>
-                <td><a href="lienspdf">Voir les réservations</a></td>
+                <td><a href="${pageContext.request.contextPath}/reservation">Voir les réservations</a></td>
             </tr>
             <tr>
                 <th scope="row">106</th>
