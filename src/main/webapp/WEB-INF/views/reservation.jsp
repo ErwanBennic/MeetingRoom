@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Erwan
@@ -13,6 +14,7 @@
 </head>
 <body>
 <div class="container">
+    <p>${reservations}</p>
     <div class="row">
         <h1>Réservation pour la salle [X] :</h1>
     </div>
@@ -26,11 +28,13 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">211</th>
-                <td>28/11/2019 | 14h00</td>
-                <td>28/11/2019 | 16h00</td>
-            </tr>
+            <c:forEach items="${reservations}" var="resa">
+                <tr>
+                    <td></td>
+                    <td>${resa.date_debut}</td>
+                    <td>${resa.date_fin}</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>

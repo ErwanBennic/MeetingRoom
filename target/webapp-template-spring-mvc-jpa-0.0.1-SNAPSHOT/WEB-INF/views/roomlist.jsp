@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -13,20 +14,37 @@
     <title>Liste des salles</title>
 </head>
 <body>
-<table class="table table-bordered">
-    <tr>
-        <th>id</th>
-        <th>Nom</th>
-    </tr>
-    <c:forEach items="${salles}" var="salle">
-        <tr>
-            <td>${salle.id}</td>
-            <td>${salle.lib}</td>
-        </tr>
-    </c:forEach>
+<div class="container">
+    <div class="row pt-4 pb-4">
+        <h1>Liste des salles</h1>
+    </div>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Salle</th>
+                <th scope="col">Impression PDF</th>
+                <th scope="col">Réservations</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${salles}" var="salle">
+                <tr>
+                    <td>${salle.lib}</td>
+                    <td></td>
+                    <td>
+                        <form action="reservation" method="post">
+                            <input type="hidden" name="id" value="${salle.id}">
+                            <button type="submit">Voir</button>
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-    </tr>
-</table>
 </body>
 <script src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="${pageContext.request.contextPath}/assets/js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

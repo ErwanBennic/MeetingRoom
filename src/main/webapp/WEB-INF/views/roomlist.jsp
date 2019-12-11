@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Erwan
@@ -30,7 +32,12 @@
                 <tr>
                     <td>${salle.lib}</td>
                     <td></td>
-                    <td></td>
+                    <td>
+                        <form action="reservation" method="post">
+                            <input type="hidden" name="id" value="${salle.id}">
+                            <button type="submit">Voir</button>
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

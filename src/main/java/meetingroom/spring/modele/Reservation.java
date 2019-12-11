@@ -17,8 +17,9 @@ public class Reservation {
     @ManyToOne(cascade = { CascadeType.PERSIST})
     private User user;
 
-    @ManyToOne(cascade = { CascadeType.PERSIST})
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Salle salle;
+
 
 
     public Long getId() {
