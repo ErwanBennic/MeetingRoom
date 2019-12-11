@@ -25,11 +25,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Date de début</label>
-                            <input type="date" class="form-control" id="inputEmail4" placeholder="Date">
+                            <input type="datetime-local" class="form-control" id="inputEmail4" placeholder="Date">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Date de fin</label>
-                            <input type="date" class="form-control" id="inputEmail5" placeholder="Date">
+                            <input type="datetime-local" class="form-control" id="inputEmail5" placeholder="Date">
                         </div>
                     </div>
                     <div class="form-group">
@@ -41,15 +41,11 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Email</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="johndoe@email.com">
+                        <label for="inputAddress2">Email des participants</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Rentrez un email">
                         <div class="row justify-content-center pt-4">
                             <button type="button" class="btn btn-primary btn-sm">Ajouter un email</button>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email des participants</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email ...">
                     </div>
                     <div class="form-group">
                         <div class="form-check">

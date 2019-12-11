@@ -35,9 +35,7 @@ public class ReservationController {
     }
 
     @PostMapping("/ajoutresa")
-    public String traitement(@ModelAttribute Reservation reservation, Model model){
-
-
+    public String ajoutresa(@ModelAttribute Reservation reservation, Model model){
 
         reservationService.newCommande(reservation);
 
