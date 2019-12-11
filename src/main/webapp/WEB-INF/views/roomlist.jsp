@@ -46,6 +46,19 @@
         </table>
     </div>
 </div>
+<table class="table table-bordered">
+    <tr>
+        <th>id</th>
+        <th>Nom</th>
+        <th>Télécharger PDF</th>
+    </tr>
+    <c:forEach items="${salles}" var="salle">
+        <tr>
+            <td>${salle.id}</td>
+            <td>${salle.lib}</td>
+            <td></td>
+        </tr>
+    </c:forEach>
 
 </body>
 <script src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

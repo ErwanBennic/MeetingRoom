@@ -1,12 +1,10 @@
 package meetingroom.spring.modele;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Salle {
 
     @Id
@@ -14,7 +12,7 @@ public class Salle {
     private Long id;
     private String lib;
 
-    @OneToMany
+    @OneToMany(cascade = { CascadeType.PERSIST})
     private List<Reservation> reservations = new ArrayList<>();
 
     public List<Reservation> getReservations() {

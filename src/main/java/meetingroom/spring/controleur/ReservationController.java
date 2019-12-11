@@ -11,12 +11,12 @@ public class ReservationController {
     @Autowired
     private ReservationService reservationService;
 
-    @GetMapping({"/scan"})
+    @GetMapping("/scan")
     public String scan() {
         return "scan";
     }
 
-    @GetMapping({"/form"})
+    @GetMapping("/form")
     public String form() {
         return "form";
     }

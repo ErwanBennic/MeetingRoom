@@ -3,6 +3,7 @@ package meetingroom.spring.modele;
 import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class Reservation {
 
     @Id
@@ -13,11 +14,11 @@ public class Reservation {
     private Date date_debut;
     private Date date_fin;
 
-    @ManyToOne
-    private long user_id;
+    @ManyToOne(cascade = { CascadeType.PERSIST})
+    private User user;
 
-    @ManyToOne
-    private long salle_id;
+    @ManyToOne(cascade = { CascadeType.PERSIST})
+    private Salle salle;
 
 
     public Long getId() {
