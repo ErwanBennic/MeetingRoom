@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
                     </div>
                 </form>
             </div>
