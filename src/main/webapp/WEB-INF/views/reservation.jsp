@@ -43,7 +43,7 @@
         </table>
     </div>
     <div class="row">
-        <a href="${pageContext.request.contextPath}/roomlist">Retour</a>
+        <a href="${pageContext.request.contextPath}/admin/roomlist">Retour</a>
     </div>
 </div>
 
