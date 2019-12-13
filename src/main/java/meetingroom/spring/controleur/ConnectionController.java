@@ -17,7 +17,7 @@ public class ConnectionController {
         private ConnectionService connectionService;
 
         @GetMapping({"/", "/connection"})
-        @PostMapping("/private/j_security_check")
+        @PostMapping("/admin/j_security_check")
         public String connection() {
             return "connection";
         }

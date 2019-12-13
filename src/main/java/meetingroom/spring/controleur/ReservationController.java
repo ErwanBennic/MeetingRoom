@@ -2,19 +2,23 @@ package meetingroom.spring.controleur;
 
 
 import meetingroom.spring.modele.Reservation;
+import meetingroom.spring.modele.ReservationDTO;
+import meetingroom.spring.modele.Salle;
+import meetingroom.spring.modele.User;
 import meetingroom.spring.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
 import java.util.List;
 
 @Controller
+@RequestMapping("/admin")
 public class ReservationController {
     @Autowired
     private ReservationService reservationService;
@@ -24,8 +28,9 @@ public class ReservationController {
         return "scan";
     }
 
-    @GetMapping("/form")
-    public String form() {
+    @GetMapping("/form/{salle}")
+    public String form(@PathVariable String salle, Model model) {
+        model.addAttribute("salle", salle);
         return "form";
     }
 
@@ -35,9 +40,12 @@ public class ReservationController {
     }
 
     @PostMapping("/ajoutresa")
-    public String ajoutresa(@ModelAttribute Reservation reservation, Model model){
+    public String ajoutresa(@ModelAttribute ReservationDTO reservationDTO, Model model, @RequestParam("salle") String salle, HttpServletRequest httpRequest) throws ParseException {
+        String username = httpRequest.getUserPrincipal().getName();
 
-        reservationService.newCommande(reservation);
+        reservationDTO.setUsername(username);
+
+        reservationService.newCommande(reservationDTO);
 
         return "scan";
     }

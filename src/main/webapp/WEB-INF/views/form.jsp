@@ -21,34 +21,30 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-6">
-                <form action="ajoutresa" method="post">
+                <form action="/MeetingRoom/admin/ajoutresa" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">Date de début</label>
-                            <input type="datetime-local" class="form-control" id="inputEmail4" placeholder="Date">
+                            <label for="datedebut">Date de début</label>
+                            <input type="datetime-local" name="date_debut" class="form-control" id="datedebut" placeholder="Date">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">Date de fin</label>
-                            <input type="datetime-local" class="form-control" id="inputEmail5" placeholder="Date">
+                            <label for="datefin">Date de fin</label>
+                            <input type="datetime-local" name="date_fin" class="form-control" id="datefin" placeholder="Date">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword4">Prénom, Nom</label>
-                        <input type="text" class="form-control" id="inputPassword4" placeholder="John Doe">
+                        <label for="nomresa">Nom de la réservation</label>
+                        <input type="text" name="nom" class="form-control" id="nomresa" placeholder="John Doe">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Description</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Email des participants</label>
-                        <div class="jQueryEmail">
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Rentrez un email">
-                        </div>
-                        <div class="row justify-content-center pt-4">
-                            <button type="button" class="btn btn-primary btn-sm formEmail">Ajouter un email</button>
-                        </div>
+                        <label for="emails">Emails des participants</label>
+                        <textarea class="form-control" id="emails" name="emails" rows="3"></textarea>
                     </div>
+                    <input type="hidden" name="salle" value="${salle}">
                     <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="gridCheck">
