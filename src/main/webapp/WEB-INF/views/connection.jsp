@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -22,12 +23,12 @@
         <div class="row justify-content-center">
             <h1><b>Meeting-Room</b></h1>
         </div>
-        <form class="form-signin">
+        <form class="form-signin" method="POST" action="j_security_check">
             <h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
             <label for="inputEmail" class="sr-only">Adresse Email</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" required autofocus>
+            <input type="email" name="j_username" id="inputEmail" class="form-control" placeholder="Adresse Email" required autofocus>
             <label for="inputPassword" class="sr-only">Mot de passe</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+            <input type="password" name="j_password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
             <div class="checkbox mb-3">
                 <label>
                     <input type="checkbox" value="remember-me"> Se souvenir de moi

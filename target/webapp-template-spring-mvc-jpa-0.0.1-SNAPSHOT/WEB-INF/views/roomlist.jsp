@@ -18,6 +18,7 @@
 <div class="container">
     <div class="row pt-4 pb-4">
         <h1>Liste des salles</h1>
+        ${pageContext.request.userPrincipal.name}
     </div>
     <div class="row">
         <table class="table table-striped">
