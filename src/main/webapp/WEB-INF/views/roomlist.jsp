@@ -32,7 +32,7 @@
             <c:forEach items="${salles}" var="salle">
                 <tr>
                     <td>${salle.lib}</td>
-                    <td></td>
+                    <td><a href="<c:url value="/pdf/${salle.lib}"/>">Impression PDF</a></td>
                     <td>
                         <form action="reservation" method="post">
                             <input type="hidden" name="id" value="${salle.lib}">
