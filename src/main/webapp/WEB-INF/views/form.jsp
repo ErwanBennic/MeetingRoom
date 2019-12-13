@@ -42,9 +42,11 @@
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">Email des participants</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Rentrez un email">
+                        <div class="jQueryEmail">
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Rentrez un email">
+                        </div>
                         <div class="row justify-content-center pt-4">
-                            <button type="button" class="btn btn-primary btn-sm">Ajouter un email</button>
+                            <button type="button" class="btn btn-primary btn-sm formEmail">Ajouter un email</button>
                         </div>
                     </div>
                     <div class="form-group">
@@ -56,7 +58,7 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
                     </div>
                 </form>
             </div>
@@ -66,4 +68,6 @@
 <script src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="${pageContext.request.contextPath}/assets/js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/assets/js/formEmail.js"></script>
 </html>
+
