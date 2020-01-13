@@ -1,6 +1,7 @@
 package meetingroom.spring.modele;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -19,6 +20,8 @@ public class Reservation {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Salle salle;
+
+
 
     public User getUser() {
         return user;
@@ -75,4 +78,5 @@ public class Reservation {
     public void setDate_fin(Date date_fin) {
         this.date_fin = date_fin;
     }
+
 }

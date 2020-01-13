@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -29,11 +32,19 @@ public class AdminController {
     }
 
     @PostMapping("/reservation")
-    public String reservation(Model model, @RequestParam("id") String id) {
-        List<Reservation> reservations = adminService.getListReservation(id);
+    public String reservation(Model model, @RequestParam("id") String id, @RequestParam("dateFrom") String dateFrom) throws ParseException {
+        Date userDate = new Date();
+        if (dateFrom != ""){
+            userDate = new SimpleDateFormat("yyyy-MM-dd").parse(dateFrom);
+        }
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateUser = formatter.format(userDate);
+        List<Reservation> reservations = adminService.getListReservation(id, userDate);
         model.addAttribute("reservations", reservations);
         model.addAttribute("salle", id);
+        model.addAttribute("dateUser", dateUser);
         return "reservation";
     }
 
 }
+

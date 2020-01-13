@@ -18,9 +18,19 @@
     <div class="row">
         <h1>Réservation pour la salle [${salle}] :</h1>
     </div>
+
+
+
     <div class="row pt-4 pb-4">
         <table class="table table-striped">
             <thead>
+            <tr>
+                <form method="post" action="reservation">
+                    <input type="date" name="dateFrom" value="${dateUser}">
+                    <input type="hidden" name="id" value="${salle}">
+                    <button type="submit">Rechercher</button>
+                </form>
+            </tr>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nom</th>

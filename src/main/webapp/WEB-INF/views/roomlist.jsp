@@ -18,7 +18,6 @@
 <div class="container">
     <div class="row pt-4 pb-4">
         <h1>Liste des salles</h1>
-        ${pageContext.request.userPrincipal.name}
     </div>
     <div class="row">
         <table class="table table-striped">
@@ -37,6 +36,7 @@
                     <td>
                         <form action="reservation" method="post">
                             <input type="hidden" name="id" value="${salle.lib}">
+                            <input type="hidden" name="dateFrom" value="">
                             <button type="submit">Voir</button>
                         </form>
                     </td>

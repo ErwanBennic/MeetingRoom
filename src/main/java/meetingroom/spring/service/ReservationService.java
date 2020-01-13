@@ -1,10 +1,7 @@
 package meetingroom.spring.service;
 
 import meetingroom.spring.dao.RerservationDao;
-import meetingroom.spring.modele.Reservation;
-import meetingroom.spring.modele.ReservationDTO;
-import meetingroom.spring.modele.Salle;
-import meetingroom.spring.modele.User;
+import meetingroom.spring.modele.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +19,7 @@ public class ReservationService {
     private RerservationDao rerservationDao;
 
     @Transactional
-    public void newCommande(ReservationDTO reservationDTO) throws ParseException {
+    public void newCommande(ReservationDTO reservationDTO, String emails) throws ParseException {
         Salle sallee = rerservationDao.findSalle(reservationDTO.getSalle());
         User user = rerservationDao.findUser(reservationDTO.getUsername());
 
@@ -37,6 +34,29 @@ public class ReservationService {
         reservation.setUser(user);
 
         rerservationDao.insertResult(reservation);
+
+        Reservation getReservation = rerservationDao.findReservation(reservationDTO.getNom());
+
+        String[] stringParticipants = emails.split(";");
+        List<Participant> participants = new ArrayList<Participant>();
+
+        for (String email : stringParticipants)
+        {
+            Participant participant = new Participant();
+            participant.setEmail(email);
+            participant.setReservation(getReservation);
+            participants.add(participant);
+            rerservationDao.insertParticipant(participant);
+        }
+
+    }
+
+    public List<Date> getListDateDebut() {
+        return rerservationDao.getListDateDebut();
+    }
+
+    public List<Date> getListDateFin() {
+        return rerservationDao.getListDateFin();
     }
 
     @Transactional

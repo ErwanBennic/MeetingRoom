@@ -7,7 +7,7 @@ public class Participant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nom;
+    private String email;
 
     @ManyToOne(cascade = { CascadeType.PERSIST})
     private Reservation reservation;
@@ -20,12 +20,12 @@ public class Participant {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Reservation getReservation() {

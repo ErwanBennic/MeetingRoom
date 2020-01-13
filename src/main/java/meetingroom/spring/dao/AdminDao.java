@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -26,6 +27,22 @@ public class AdminDao {
         List<Reservation> reservations;
 
         reservations = em.createQuery("select r from Reservation r where r.salle.lib = :id", Reservation.class).setParameter("id", id)
+                .getResultList();
+
+        if (reservations.size() < 1){
+            return null;
+        } else {
+            return reservations;
+        }
+    }
+
+    @Transactional
+    public List<Reservation> getListReservation(String id, Date userDate) {
+        List<Reservation> reservations;
+
+        reservations = em.createQuery("select r from Reservation r where r.salle.lib = :id and r.date_debut = :userDate", Reservation.class)
+                .setParameter("userDate", userDate)
+                .setParameter("id", id)
                 .getResultList();
 
         if (reservations.size() < 1){
