@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `participant`
 --
+USE meetingroom;
 
 DROP TABLE IF EXISTS `participant`;
 CREATE TABLE IF NOT EXISTS `participant` (
