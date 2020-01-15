@@ -40,7 +40,7 @@ public class AdminDao {
     public List<Reservation> getListReservation(String id, Date userDate) {
         List<Reservation> reservations;
 
-        reservations = em.createQuery("select r from Reservation r where r.salle.lib = :id and r.date_debut = :userDate", Reservation.class)
+        reservations = em.createQuery("select r from Reservation r where r.salle.lib = :id and r.date_debut >= :userDate and r.date_fin <= :userDate", Reservation.class)
                 .setParameter("userDate", userDate)
                 .setParameter("id", id)
                 .getResultList();

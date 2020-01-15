@@ -16,12 +16,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="row pt-4 pb-4 justify-content-center">
+        <div class="row justify-content-center mt-3">
             <h1>Réservation de salle</h1>
         </div>
+        <hr>
+        <br>
         <div class="row justify-content-center">
             <div class="col-6">
-                <form action="/MeetingRoom/admin/ajoutresa" method="post">
+                <form action="/MeetingRoom/user/ajoutresa" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="datedebut">Date de début</label>
@@ -31,6 +33,7 @@
                             <label for="datefin">Date de fin</label>
                             <input type="datetime-local" name="date_fin" class="form-control" id="datefin" placeholder="Date">
                         </div>
+                        <p>${invalide}</p>
                     </div>
                     <div class="form-group">
                         <label for="nomresa">Nom de la réservation</label>
@@ -45,14 +48,7 @@
                         <textarea class="form-control" id="emails" name="emails" rows="3"></textarea>
                     </div>
                     <input type="hidden" name="salle" value="${salle}">
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Je souhaite aussi recevoir un email de confirmation.
-                            </label>
-                        </div>
-                    </div>
+                    <hr>
                     <div class="row justify-content-center">
                         <button type="submit" class="btn btn-primary">Envoyer</button>
                     </div>

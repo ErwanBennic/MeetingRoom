@@ -1,16 +1,11 @@
 package meetingroom.spring.controleur;
 
 
-import meetingroom.spring.modele.Reservation;
 import meetingroom.spring.modele.ReservationDTO;
-import meetingroom.spring.modele.Salle;
-import meetingroom.spring.modele.User;
 import meetingroom.spring.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,10 +32,6 @@ public class ReservationController {
         return "form";
     }
 
-    @GetMapping({"/reservation"})
-    public String reservation() {
-        return "reservation";
-    }
 
     @PostMapping("/ajoutresa")
     public String ajoutresa(@ModelAttribute ReservationDTO reservationDTO, Model model, @RequestParam("emails") String emails, @RequestParam("date_debut") String dateDebut, HttpServletRequest httpRequest) throws ParseException {
@@ -64,14 +55,21 @@ public class ReservationController {
 
         for (List<Date> dates : listDates){
             if (dateDeDebut.compareTo(dates.get(0)) > 0 && dateDeDebut.compareTo(dates.get(1)) < 0){
-                return "roomlist";
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy '-' hh:mm");
+                String debut = sdf.format(dates.get(0));
+                String fin = sdf.format(dates.get(1));
+                String invalide = "Une salle est déjà reservée de : " + debut + " à " + fin;
+                model.addAttribute("invalide", invalide);
+                model.addAttribute("salle", reservationDTO.getSalle());
+                return "form";
             }
         }
 
 
         reservationService.newCommande(reservationDTO, emails);
 
-        return "scan";
+        model.addAttribute("reservationDTO", reservationDTO);
+        return "confirmation";
     }
 
 

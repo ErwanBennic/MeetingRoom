@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: Erwan
@@ -16,27 +17,24 @@
 <body>
 <div class="container">
     <div class="row">
-        <h1>Réservation pour la salle [${salle}] :</h1>
+        <h1>Réservation pour la salle ${salle} :</h1>
     </div>
 
-
-
     <div class="row pt-4 pb-4">
+        <form method="post" action="reservation">
+                <input type="date" class="form-control" name="dateFrom" value="${dateUser}">
+            <hr>
+                <button type="submit" class="btn btn-outline-primary">Rechercher</button>
+            <input type="hidden" name="id" value="${salle}">
+        </form>
         <table class="table table-striped">
             <thead>
-            <tr>
-                <form method="post" action="reservation">
-                    <input type="date" name="dateFrom" value="${dateUser}">
-                    <input type="hidden" name="id" value="${salle}">
-                    <button type="submit">Rechercher</button>
-                </form>
-            </tr>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Description</th>
-                <th scope="col">Date de début</th>
-                <th scope="col">Date de fin</th>
+                <th scope="col">Heure de début</th>
+                <th scope="col">Heure de fin</th>
             </tr>
             </thead>
             <tbody>
@@ -45,8 +43,8 @@
                     <td>${resa.id}</td>
                     <td>${resa.nom}</td>
                     <td>${resa.description}</td>
-                    <td>${resa.date_debut}</td>
-                    <td>${resa.date_fin}</td>
+                    <td><fmt:formatDate value="${resa.date_debut}" pattern="HH:mm" /></td>
+                    <td><fmt:formatDate value="${resa.date_fin}" pattern="HH:mm" /></td>
                 </tr>
             </c:forEach>
             </tbody>

@@ -29,11 +29,6 @@
             <input type="email" name="j_username" id="inputEmail" class="form-control" placeholder="Adresse Email" required autofocus>
             <label for="inputPassword" class="sr-only">Mot de passe</label>
             <input type="password" name="j_password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Se souvenir de moi
-                </label>
-            </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
         </form>

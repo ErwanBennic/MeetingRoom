@@ -16,10 +16,15 @@ public class ConnectionController {
         @Autowired
         private ConnectionService connectionService;
 
-        @GetMapping({"/", "/connection"})
+        @GetMapping({"/connection"})
         @PostMapping("/admin/j_security_check")
         public String connection() {
             return "connection";
+        }
+
+        @GetMapping({"/"})
+        public String accueil() {
+                return "accueil";
         }
 
 }
