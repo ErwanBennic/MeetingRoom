@@ -15,7 +15,15 @@
     <title>Formulaire</title>
 </head>
 <body>
-    <div class="container">
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}">MeetingRoom</a>
+    <span class="navbar-text">
+      <a href="${pageContext.request.contextPath}/admin/roomlist"><button class="btn btn-outline-success">Admin</button></a>
+    </span>
+</nav>
+
+    <div class="container mt-3">
         <div class="row justify-content-center mt-3">
             <h1>Réservation de salle</h1>
         </div>

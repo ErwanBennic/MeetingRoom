@@ -15,7 +15,15 @@
     <title>Liste des salles</title>
 </head>
 <body>
-<div class="container">
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}">MeetingRoom</a>
+    <span class="navbar-text">
+      <a href="${pageContext.request.contextPath}/admin/roomlist"><button class="btn btn-outline-success">Admin</button></a>
+    </span>
+</nav>
+
+<div class="container mt-3">
     <div class="row pt-4 pb-4">
         <h1>Liste des salles</h1>
     </div>

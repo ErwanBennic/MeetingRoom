@@ -2,7 +2,6 @@ package meetingroom.spring.dao;
 
 import meetingroom.spring.modele.Reservation;
 import meetingroom.spring.modele.Salle;
-import meetingroom.spring.modele.User;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

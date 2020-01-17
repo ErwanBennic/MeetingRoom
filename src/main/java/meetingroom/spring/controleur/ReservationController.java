@@ -34,7 +34,7 @@ public class ReservationController {
 
 
     @PostMapping("/ajoutresa")
-    public String ajoutresa(@ModelAttribute ReservationDTO reservationDTO, Model model, @RequestParam("emails") String emails, @RequestParam("date_debut") String dateDebut, HttpServletRequest httpRequest) throws ParseException {
+    public String ajoutresa(@ModelAttribute ReservationDTO reservationDTO, Model model, @RequestParam("emails") String emails, @RequestParam("date_debut") String dateDebut, HttpServletRequest httpRequest) throws Exception {
         String username = httpRequest.getUserPrincipal().getName();
 
         reservationDTO.setUsername(username);
@@ -67,6 +67,8 @@ public class ReservationController {
 
 
         reservationService.newCommande(reservationDTO, emails);
+
+        reservationService.eventRequest(emails);
 
         model.addAttribute("reservationDTO", reservationDTO);
         return "confirmation";

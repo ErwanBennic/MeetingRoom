@@ -13,14 +13,33 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div class="container text-center">
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}">MeetingRoom</a>
+    <span class="navbar-text">
+      <a href="${pageContext.request.contextPath}/admin/roomlist"><button class="btn btn-outline-success">Admin</button></a>
+    </span>
+</nav>
+
+<div class="container text-center mt-5">
     <h1>Bienvenue sur MeetingRoom</h1>
     <hr>
     <h3>Vous pouvez directement scanner un QrCode pour arriver au formulaire de reservation</h3>
-    <div class="row mr-4">
-        <a href="${pageContext.request.contextPath}/admin/roomlist" class="mr-4">Accéder à la liste des salles</a>
-        <a href="${pageContext.request.contextPath}/user/form/201"class="mr-4">Accéder à la réservation de la salle 201</a>
+
+    <div class="card-deck mt-5">
+        <c:forEach items="${salles}" var="salle">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Salle ${salle.lib}</h5>
+                <a href="${pageContext.request.contextPath}/user/form/${salle.lib}">Faire un reservation</a>
+            </div>
+        </div>
+        </c:forEach>
     </div>
+
+
+
+
 </div>
 </body>
 <script src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
