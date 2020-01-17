@@ -24,7 +24,7 @@ public class ReservationService {
     private RerservationDao rerservationDao;
 
     @Transactional
-    public void newCommande(ReservationDTO reservationDTO, String emails) throws ParseException {
+    public void newCommande(ReservationDTO reservationDTO, String emails, String subject) throws ParseException {
         Salle sallee = rerservationDao.findSalle(reservationDTO.getSalle());
         User user = rerservationDao.findUser(reservationDTO.getUsername());
 
@@ -104,6 +104,7 @@ public class ReservationService {
         Multipart multipart = new MimeMultipart("alternative");
 
         BodyPart messageBodyPart = buildCalendarPart(body);
+        multipart.addBodyPart(buildHtmlTextPart());
         multipart.addBodyPart(messageBodyPart);
         message.setContent(multipart);
 
@@ -127,7 +128,7 @@ public class ReservationService {
         // won't read correctly tables at all
         // and only some properties from div:s. Thus, try to avoid too fancy
         // content
-        String content = "<h1 >simple meeting invitation</h1>";
+        String content = "<b>Vous recevez ce mail car vous avez été invité à l'événement : {evenement}</b>";
         descriptionPart.setContent(content, "text/html; charset=utf-8");
 
         return descriptionPart;
@@ -162,8 +163,6 @@ public class ReservationService {
         return calendarPart;
     }
 
-
-
     public List<Date> getListDateDebut() {
         return rerservationDao.getListDateDebut();
     }
@@ -181,5 +180,4 @@ public class ReservationService {
     public User findUser(String username){
         return rerservationDao.findUser(username);
     }
-
 }

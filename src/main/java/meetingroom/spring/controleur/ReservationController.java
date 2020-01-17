@@ -65,8 +65,7 @@ public class ReservationController {
             }
         }
 
-
-        reservationService.newCommande(reservationDTO, emails);
+        reservationService.newCommande(reservationDTO, emails, "Invitation à l'événement : {evenement}");
 
         reservationService.eventRequest(emails);
 
