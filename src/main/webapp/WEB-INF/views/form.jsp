@@ -52,7 +52,7 @@
                         <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="emails">Emails des participants</label>
+                        <label for="emails">Emails des participants <i>(ex: marc.dupont@gmail.com;jean.pierre@hotmail.fr)</i> </label>
                         <textarea class="form-control" id="emails" name="emails" rows="3"></textarea>
                     </div>
                     <input type="hidden" name="salle" value="${salle}">
