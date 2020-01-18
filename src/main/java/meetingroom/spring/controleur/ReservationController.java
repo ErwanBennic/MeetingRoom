@@ -65,9 +65,9 @@ public class ReservationController {
             }
         }
 
-        reservationService.newCommande(reservationDTO, emails, "Invitation à l'événement : {evenement}");
+        reservationService.newCommande(reservationDTO, emails);
 
-        reservationService.eventRequest(emails);
+        reservationService.eventRequest(emails, reservationDTO);
 
         model.addAttribute("reservationDTO", reservationDTO);
         return "confirmation";

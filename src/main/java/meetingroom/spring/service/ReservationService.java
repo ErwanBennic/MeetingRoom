@@ -24,7 +24,7 @@ public class ReservationService {
     private RerservationDao rerservationDao;
 
     @Transactional
-    public void newCommande(ReservationDTO reservationDTO, String emails, String subject) throws ParseException {
+    public void newCommande(ReservationDTO reservationDTO, String emails) throws ParseException {
         Salle sallee = rerservationDao.findSalle(reservationDTO.getSalle());
         User user = rerservationDao.findUser(reservationDTO.getUsername());
 
@@ -57,11 +57,19 @@ public class ReservationService {
 
     }
 
-    public void eventRequest(String emails) throws Exception {
+    public void eventRequest(String emails, ReservationDTO reservationDTO) throws Exception {
+
+        Date dateDeDebut = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm").parse(reservationDTO.getDate_debut());
+        Date dateDeFin = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm").parse(reservationDTO.getDate_fin());
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm '-' dd/MM/yyyy");
+        String debut = sdf.format(dateDeDebut);
+        String fin = sdf.format(dateDeFin);
+        String salle = reservationDTO.getSalle();
+        String nom = reservationDTO.getNom();
 
         String[] stringParticipants = emails.split(";");
-        String body = "Nouvelle réservation de salle";
-        String subject = "Subject";
+        String body =  "Bonjour, " + nom + " vous à invité à participer à une réunion en salle " + salle + " de " + debut + " à " + fin;
+        String subject = "Invitation à une réunion";
 
 
         final MimetypesFileTypeMap mimetypes = (MimetypesFileTypeMap) MimetypesFileTypeMap.getDefaultFileTypeMap();
@@ -104,7 +112,7 @@ public class ReservationService {
         Multipart multipart = new MimeMultipart("alternative");
 
         BodyPart messageBodyPart = buildCalendarPart(body);
-        multipart.addBodyPart(buildHtmlTextPart());
+        multipart.addBodyPart(buildHtmlTextPart(body));
         multipart.addBodyPart(messageBodyPart);
         message.setContent(multipart);
 
@@ -120,15 +128,16 @@ public class ReservationService {
      * @return description part along with design
      * @throws MessagingException
      */
-    private static BodyPart buildHtmlTextPart() throws MessagingException {
+    private static BodyPart buildHtmlTextPart(String body) throws MessagingException {
 
         MimeBodyPart descriptionPart = new MimeBodyPart();
 
         // Note: even if the content is specified as being text/html, outlook
         // won't read correctly tables at all
+        // won't read correctly tables at all
         // and only some properties from div:s. Thus, try to avoid too fancy
         // content
-        String content = "<b>Vous recevez ce mail car vous avez été invité à l'événement : {evenement}</b>";
+        String content = "<b>"+ body +"</b>";
         descriptionPart.setContent(content, "text/html; charset=utf-8");
 
         return descriptionPart;
