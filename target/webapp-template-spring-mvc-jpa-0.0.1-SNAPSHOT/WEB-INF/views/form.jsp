@@ -15,48 +15,50 @@
     <title>Formulaire</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row pt-4 pb-4 justify-content-center">
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}">MeetingRoom</a>
+    <span class="navbar-text">
+      <a href="${pageContext.request.contextPath}/admin/roomlist"><button class="btn btn-outline-success">Admin</button></a>
+    </span>
+</nav>
+
+    <div class="container mt-3">
+        <div class="row justify-content-center mt-3">
             <h1>Réservation de salle</h1>
         </div>
+        <hr>
+        <br>
         <div class="row justify-content-center">
             <div class="col-6">
-                <form action="ajoutresa" method="post">
+                <form action="/MeetingRoom/user/ajoutresa" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">Date de début</label>
-                            <input type="datetime-local" class="form-control" id="inputEmail4" placeholder="Date">
+                            <label for="datedebut">Date de début</label>
+                            <input type="datetime-local" name="date_debut" class="form-control" id="datedebut" placeholder="Date">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">Date de fin</label>
-                            <input type="datetime-local" class="form-control" id="inputEmail5" placeholder="Date">
+                            <label for="datefin">Date de fin</label>
+                            <input type="datetime-local" name="date_fin" class="form-control" id="datefin" placeholder="Date">
                         </div>
+                        <p>${invalide}</p>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword4">Prénom, Nom</label>
-                        <input type="text" class="form-control" id="inputPassword4" placeholder="John Doe">
+                        <label for="nomresa">Nom de la réservation</label>
+                        <input type="text" name="nom" class="form-control" id="nomresa" placeholder="John Doe">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Description</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Email des participants</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Rentrez un email">
-                        <div class="row justify-content-center pt-4">
-                            <button type="button" class="btn btn-primary btn-sm">Ajouter un email</button>
-                        </div>
+                        <label for="emails">Emails des participants <i>(ex: marc.dupont@gmail.com;jean.pierre@hotmail.fr)</i> </label>
+                        <textarea class="form-control" id="emails" name="emails" rows="3"></textarea>
                     </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Je souhaite aussi recevoir un email de confirmation.
-                            </label>
-                        </div>
-                    </div>
+                    <input type="hidden" name="salle" value="${salle}">
+                    <hr>
                     <div class="row justify-content-center">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
                     </div>
                 </form>
             </div>
@@ -66,4 +68,6 @@
 <script src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="${pageContext.request.contextPath}/assets/js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/assets/js/formEmail.js"></script>
 </html>
+

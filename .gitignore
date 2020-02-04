@@ -1,4 +1,4 @@
 *.war
 target/*
-.idea
-target
+*.idea
+*.target

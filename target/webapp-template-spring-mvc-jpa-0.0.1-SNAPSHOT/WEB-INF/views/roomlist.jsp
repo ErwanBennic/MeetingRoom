@@ -15,10 +15,17 @@
     <title>Liste des salles</title>
 </head>
 <body>
-<div class="container">
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}">MeetingRoom</a>
+    <span class="navbar-text">
+      <a href="${pageContext.request.contextPath}/admin/roomlist"><button class="btn btn-outline-success">Admin</button></a>
+    </span>
+</nav>
+
+<div class="container mt-3">
     <div class="row pt-4 pb-4">
         <h1>Liste des salles</h1>
-        ${pageContext.request.userPrincipal.name}
     </div>
     <div class="row">
         <table class="table table-striped">
@@ -33,10 +40,11 @@
             <c:forEach items="${salles}" var="salle">
                 <tr>
                     <td>${salle.lib}</td>
-                    <td></td>
+                    <td><a href="<c:url value="/pdf/${salle.lib}"/>">Impression PDF</a></td>
                     <td>
                         <form action="reservation" method="post">
                             <input type="hidden" name="id" value="${salle.lib}">
+                            <input type="hidden" name="dateFrom" value="">
                             <button type="submit">Voir</button>
                         </form>
                     </td>
